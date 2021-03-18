@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package inpower_proto;
+
+service Post {
+    rpc Create (CreatePost) returns (PostResponse) {}
+    rpc Get (GetPost) returns (PostResponse) {}
+    rpc List (GetPosts) returns (ListResponse) {}
+    rpc GroupList (GetGroupPosts) returns (ListResponse) {}
+    rpc UsersList (GetUsersPosts) returns (ListResponse) {}
+}
+
+message PostResponse {
+    string id = 1;
+    string title = 2;
+    string context = 3;
+    bool active = 4;
+    string user_id = 5;
+    string group_id = 6;
+}
+
+message CreatePost {
+    string title = 1;
+    string context = 2;
+    string user_id = 3;
+    string group_id = 4;
+}
+
+message GetPost {
+    string id = 1;
+}
+
+message GetPosts {}
+
+message GetGroupPosts {
+    string group_id = 1;
+}
+
+message GetUsersPosts {
+    string user_id = 1;
+}
+
+message ListResponse {
+    repeated PostResponse posts = 1;
+}

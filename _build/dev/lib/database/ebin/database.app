@@ -1,0 +1,12 @@
+{application,database,
+             [{applications,[kernel,stdlib,elixir,logger,inpower_proto,
+                             ecto_sql,postgrex]},
+              {description,"database"},
+              {modules,['Elixir.Database','Elixir.Database.Application',
+                        'Elixir.Database.Endpoint',
+                        'Elixir.Database.InpowerService.Server',
+                        'Elixir.Database.Posts','Elixir.Database.Repo',
+                        'Elixir.Database.Schema.Post']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.Database.Application',[]}}]}.
